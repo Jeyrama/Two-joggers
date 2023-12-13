@@ -36,3 +36,14 @@ const laps = (lcm, x, y) => [lcm / x, lcm / y]
 const nbrOfLaps = (x, y) => laps(lcm(x, y), x, y)
 
 // or
+
+function gcd(a, b) {
+  if (b == 0) {
+    return a;
+  } return gcd(b, a % b);
+}
+
+function numberOfLaps(x, y) {
+  let lcm = (x*y) / gcd(x,y);
+  return [lcm / x, lcm / y];
+}
